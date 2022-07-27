@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""return status of API"""
 from flask import Flask
 from models import storage
 from api.v1.views import app_views 
@@ -30,4 +30,3 @@ def set_port_host(HBNB_API_HOST, HBNB_API_PORT):
 
 if __name__ == "__main__":
 	set_port_host(HBNB_API_HOST, HBNB_API_PORT)
-	
