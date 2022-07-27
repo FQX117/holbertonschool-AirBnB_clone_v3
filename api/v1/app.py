@@ -18,7 +18,7 @@ def teardown_appcontext(self):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    """returns 404...but in json"""
+    """json 404"""
     return jsonify({"error": "Not found"}), 404
 
 def set_port_host(HBNB_API_HOST, HBNB_API_PORT):
