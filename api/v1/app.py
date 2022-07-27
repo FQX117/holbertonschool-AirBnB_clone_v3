@@ -28,5 +28,11 @@ def set_port_host(HBNB_API_HOST, HBNB_API_PORT):
 		HBNB_API_PORT = "5000"
 
 
-if __name__ == "__main__":
-	set_port_host(HBNB_API_HOST, HBNB_API_PORT)
+if __name__ == '__main__':
+    host = "0.0.0.0"
+    port = '5000'
+    if getenv("HBNB_API_HOST"):
+        host = getenv("HBNB_API_HOST")
+    if getenv("HBNB_API_PORT"):
+        port = getenv("HBNB_API_PORT")
+    app.run(host=host, port=port, threaded=True)
