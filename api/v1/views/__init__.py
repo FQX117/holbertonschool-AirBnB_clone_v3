@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-''' views '''
-from app.py import Blueprint 
+'''blue print veiws '''
+from flask import Blueprint 
 
 
 app_views = ('app_views'__name__, url_prefix='/api/v1')
