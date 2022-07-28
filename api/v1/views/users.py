@@ -42,11 +42,11 @@ def user_delete(user_id):
 def post_user():
     """add user using POST"""
     if not request.get_json():
-        return make_response(jsonify({"Not a JSON"}), 400)
+        return make_response(jsonify({"error": "Not a JSON"}), 400)
     if "email" not in request.get_json():
-        return make_response(jsonify({"Missing email"}), 400)
+        return make_response(jsonify({"error": "Missing email"}), 400)
     if "password" not in request.get_json():
-        return make_response(jsonify({"Missing password"}), 400)
+        return make_response(jsonify({"error": "Missing password"}), 400)
     user = User(**request.get_json())
     user.save()
     return make_response(jsonify(user.to_dict()), 201)
