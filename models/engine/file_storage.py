@@ -73,9 +73,9 @@ class FileStorage:
         '''retrieve objcts'''
         try:
                 obj_available = self.all(cls)
-                obj_finder = obj_available["{}.{}".format(cls.__name__, id]
+                obj_finder = obj_available["{}.{}".format(cls.__name__, id)]
                 return obj_finder
-            except Exception:
+        except Exception:
                 return None
 
     def count(self, cls=None):
