@@ -13,7 +13,7 @@ from flask import jsonify, abort,make_response, request
 
 @app_views.route('/places/<place_id>/reviews', methods = ['GET'], strict_slashes=False)
 def all_reviews(place_id=None):
-	'''view places review'''
+	"""view places review"""
 	reviewlist = []
 	try:
 		the_place = storage.get(Place, place_id)
@@ -27,7 +27,7 @@ def all_reviews(place_id=None):
 
 @app_views.route('/reviews/review_id', methods=['GET'], strict_slashes=False)
 def review_id(review_id=None):
-	'''retireve review id'''
+	"""retireve review id"""
 	try:
 		new_review = storage.get(Review, review_id)
 		return jsonify(new_review.to_dict())
@@ -37,7 +37,7 @@ def review_id(review_id=None):
 
 @app_views.route('/reviews/review_id', methods=['DELETE'], strict_slashes=False)
 def deletereview(review_id=None):
-	''' delete a review'''
+	""" delete a review"""
 	new_review = storage.get(Review, review_id)
 	if new_review:
 		storage.delete(new_review)
