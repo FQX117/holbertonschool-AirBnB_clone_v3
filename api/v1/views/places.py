@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-''' Places API '''
+""" 
+Places API
+"""
 
 from models.city import City
 from models.user import User

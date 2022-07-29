@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-''' Review page functions and features via api '''
+"""
+Review page functions and features via api
+"""
 
 from models.place import Place
 from models.user import User
