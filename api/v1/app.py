@@ -7,8 +7,10 @@ from api.v1.views import app_views
 from os import getenv
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 app.register_blueprint(app_views)
-CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
+cors = CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
+
 
 
 @app.teardown_appcontext
@@ -20,13 +22,6 @@ def teardown_appcontext(self):
 def page_not_found(error):
     """json 404"""
     return jsonify({"error": "Not found"}), 404
-
-def set_port_host(HBNB_API_HOST, HBNB_API_PORT):
-	if not HBNB_API_HOST:
-		HBNB_API_HOST = "0.0.0.0"
-	if not HBNB_API_PORT:
-		HBNB_API_PORT = "5000"
-
 
 if __name__ == '__main__':
     host = "0.0.0.0"
