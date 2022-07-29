@@ -2,13 +2,13 @@
 """return status of API"""
 from flask import Flask, jsonify, Blueprint
 from models import storage
+from flask_cors import CORS
 from api.v1.views import app_views 
 from os import getenv
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
-HBNB_API_HOST = getenv("HBNB_API_HOST")
-HBNB_API_PORT = getenv("HBNB_API_PORT")
+CORS(app, resources={"/*": {"origins": "0.0.0.0"}})
 
 
 @app.teardown_appcontext
