@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/python3
 '''blue print veiws '''
 from flask import Blueprint 
